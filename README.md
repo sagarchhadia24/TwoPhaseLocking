@@ -16,7 +16,6 @@ o Lock_state(read/share locked, write/exclusive lock)
 o Locking_Transaction_id
 
 
-
 Program Pseudo Code:
 While ( !EOF )
 {
