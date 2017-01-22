@@ -1,0 +1,67 @@
+************************************************************ 
+
+Implementation of Rigorous 2PL With the Wound-Wait Method !! 
+
+************************************************************ 
+
+Begin Transaction: T1
+
+T1 has a read lock on item Y
+
+T1 is Upgrading read lock to write lock on item Y
+
+T1 has a read lock on item Z
+
+Begin Transaction: T2
+
+T2 has a read lock on item X
+
+T2 is Upgrading read lock to write lock on item X
+
+T1 is Upgrading read lock to write lock on item Z
+
+Item Y is Write locked and not available! 
+
+T2 is waiting for Read Lock on Y
+
+Begin Transaction: T3
+
+Item Z is Write locked and not available! 
+
+T3 is waiting for Read Lock on Z
+
+Begin Transaction: T4
+
+Item X is Write locked and not available! 
+
+T4 is waiting for Read Lock on X
+
+Active Transaction 1 is Committed
+
+All items released by the transaction T1
+
+T2 has a read lock on item Y
+
+T3 has a write lock on item Z
+
+T2 is Upgrading read lock to write lock on item Y
+
+Active Transaction 2 is Committed
+
+All items released by the transaction T2
+
+T4 has a read lock on item X
+
+T3 has a read lock on item X
+
+T3 is waiting for write lock on X
+
+Blocked Transaction 3 is Aborted
+
+All items released by the transaction T3
+
+T4 is Upgrading read lock to write lock on item X
+
+Active Transaction 4 is Committed
+
+All items released by the transaction T4
