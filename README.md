@@ -33,6 +33,7 @@ tid = int (substring staring from 2nd char till "(")
 itemname = (extract itemname from line between "( )")
 // Check if item does not exist in lock table ‐> insert into lock table
 if (!itemname)
+
 {
 Update lock table (itemname, RL)
 print "T 'tid' has a read lock on item 'itemname'"
